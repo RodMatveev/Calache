@@ -81,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC12FA11C0076F100C088CC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +105,7 @@
 		3FA89AFE1C00683B009750DF = {
 			isa = PBXGroup;
 			children = (
+				DAC12FA01C0076F100C088CC /* MapKit.framework */,
 				3FA89B091C00683B009750DF /* Caleche */,
 				3FA89B231C00683B009750DF /* CalecheTests */,
 				3FA89B2E1C00683B009750DF /* CalecheUITests */,
@@ -124,10 +126,14 @@
 		3FA89B091C00683B009750DF /* Caleche */ = {
 			isa = PBXGroup;
 			children = (
+				DAC12FC61C010A3100C088CC /* MarqueeLabel */,
+				DAC12FBF1C01060000C088CC /* PulsingHalo */,
 				3FA89B0D1C00683B009750DF /* AppDelegate.h */,
 				3FA89B0E1C00683B009750DF /* AppDelegate.m */,
 				3FA89B101C00683B009750DF /* ViewController.h */,
 				3FA89B111C00683B009750DF /* ViewController.m */,
+				DAC12FBC1C00D2DF00C088CC /* AKPointAnnotation.h */,
+				DAC12FBD1C00D2DF00C088CC /* AKPointAnnotation.m */,
 				3FA89B131C00683B009750DF /* Main.storyboard */,
 				3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */,
 				3FA89B3D1C007FA7009750DF /* ResultsViewController.h */,
@@ -146,6 +152,7 @@
 		3FA89B0A1C00683B009750DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DAC12FA21C007E3500C088CC /* Fonts */,
 				3FA89B0B1C00683B009750DF /* main.m */,
 				3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */,
 				3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */,
@@ -171,6 +178,39 @@
 				3FA89B311C00683B009750DF /* Info.plist */,
 			);
 			path = CalecheUITests;
+			sourceTree = "<group>";
+		};
+		DAC12FA21C007E3500C088CC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DAC12FBA1C00CFE600C088CC /* pin@2x.png */,
+				DAC12FB61C00C74F00C088CC /* backArrow.png */,
+				DAC12FB41C00C15800C088CC /* search.png */,
+				DAC12FAD1C008EED00C088CC /* caleche logo.png */,
+				DAC12FA31C007E6B00C088CC /* pier-bold-italic.otf */,
+				DAC12FA41C007E6B00C088CC /* pier-bold.otf */,
+				DAC12FA51C007E6B00C088CC /* pier-italic.otf */,
+				DAC12FA61C007E6B00C088CC /* pier-regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		DAC12FBF1C01060000C088CC /* PulsingHalo */ = {
+			isa = PBXGroup;
+			children = (
+				DAC12FC01C01060000C088CC /* PulsingHaloLayer.h */,
+				DAC12FC11C01060000C088CC /* PulsingHaloLayer.m */,
+			);
+			path = PulsingHalo;
+			sourceTree = "<group>";
+		};
+		DAC12FC61C010A3100C088CC /* MarqueeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DAC12FC31C010A2C00C088CC /* MarqueeLabel.h */,
+				DAC12FC41C010A2C00C088CC /* MarqueeLabel.m */,
+			);
+			name = MarqueeLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +317,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC12FA71C007E6B00C088CC /* pier-bold-italic.otf in Resources */,
+				DAC12FAA1C007E6B00C088CC /* pier-regular.otf in Resources */,
+				DAC12FAE1C008EED00C088CC /* caleche logo.png in Resources */,
 				3FA89B1A1C00683B009750DF /* LaunchScreen.storyboard in Resources */,
 				3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */,
 				3F03ECD81C00C5820078FA6B /* arrow_up@2x.png in Resources */,
@@ -314,7 +357,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC12FC21C01060000C088CC /* PulsingHaloLayer.m in Sources */,
 				3FA89B121C00683B009750DF /* ViewController.m in Sources */,
+				DAC12FB31C00BFB600C088CC /* AKAdressSearchTextField.m in Sources */,
+				DAC12FC51C010A2C00C088CC /* MarqueeLabel.m in Sources */,
 				3FA89B0F1C00683B009750DF /* AppDelegate.m in Sources */,
 				3F8C26171C00D943004E58AF /* EverythingTableViewCell.m in Sources */,
 				3FA89B0C1C00683B009750DF /* main.m in Sources */,
