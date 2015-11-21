@@ -16,6 +16,21 @@
 		3F03ECDB1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
 		3F03ECDC1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
 		3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */; };
+		3F1DD0451C011F720092F549 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DD0441C011F720092F549 /* PulsingHaloLayer.m */; };
+		3F1DD0481C0120BF0092F549 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DD0471C0120BF0092F549 /* MarqueeLabel.m */; };
+		3F1DD04B1C0120CF0092F549 /* AKPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DD04A1C0120CF0092F549 /* AKPointAnnotation.m */; };
+		3F1DD04E1C01219D0092F549 /* AKAdressSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DD04D1C01219D0092F549 /* AKAdressSearchTextField.m */; };
+		3F1DD0501C0121AE0092F549 /* caleche logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD04F1C0121AE0092F549 /* caleche logo.png */; };
+		3F1DD0581C0121C40092F549 /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0511C0121C40092F549 /* backArrow.png */; };
+		3F1DD0591C0121C40092F549 /* pier-bold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0521C0121C40092F549 /* pier-bold-italic.otf */; };
+		3F1DD05A1C0121C40092F549 /* pier-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0531C0121C40092F549 /* pier-bold.otf */; };
+		3F1DD05B1C0121C40092F549 /* pier-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0541C0121C40092F549 /* pier-italic.otf */; };
+		3F1DD05C1C0121C40092F549 /* pier-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0551C0121C40092F549 /* pier-regular.otf */; };
+		3F1DD05D1C0121C40092F549 /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0561C0121C40092F549 /* pin@2x.png */; };
+		3F1DD05E1C0121C40092F549 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0571C0121C40092F549 /* search.png */; };
+		3F1DD0601C0121D90092F549 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1DD05F1C0121D90092F549 /* MapKit.framework */; };
+		3F1DD0611C01230F0092F549 /* ViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FA89B101C00683B009750DF /* ViewController.h */; };
+		3F1DD0621C01230F0092F549 /* ViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = 3FA89B111C00683B009750DF /* ViewController.m */; };
 		3F8C26171C00D943004E58AF /* EverythingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8C26151C00D943004E58AF /* EverythingTableViewCell.m */; };
 		3F8C26181C00D943004E58AF /* EverythingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F8C26161C00D943004E58AF /* EverythingTableViewCell.xib */; };
 		3FA89B0C1C00683B009750DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B0B1C00683B009750DF /* main.m */; };
@@ -53,6 +68,23 @@
 		3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_up@2x.png"; path = "../../../Downloads/arrow_up@2x.png"; sourceTree = "<group>"; };
 		3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
 		3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardTemp.storyboard; sourceTree = "<group>"; };
+		3F1DD0431C011F720092F549 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PulsingHaloLayer.h; path = "../../../../Downloads/PulsingHalo-master/PulsingHalo/PulsingHaloLayer.h"; sourceTree = "<group>"; };
+		3F1DD0441C011F720092F549 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PulsingHaloLayer.m; path = "../../../../Downloads/PulsingHalo-master/PulsingHalo/PulsingHaloLayer.m"; sourceTree = "<group>"; };
+		3F1DD0461C0120BF0092F549 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		3F1DD0471C0120BF0092F549 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
+		3F1DD0491C0120CF0092F549 /* AKPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPointAnnotation.h; sourceTree = "<group>"; };
+		3F1DD04A1C0120CF0092F549 /* AKPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPointAnnotation.m; sourceTree = "<group>"; };
+		3F1DD04C1C01219D0092F549 /* AKAdressSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAdressSearchTextField.h; sourceTree = "<group>"; };
+		3F1DD04D1C01219D0092F549 /* AKAdressSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAdressSearchTextField.m; sourceTree = "<group>"; };
+		3F1DD04F1C0121AE0092F549 /* caleche logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caleche logo.png"; sourceTree = "<group>"; };
+		3F1DD0511C0121C40092F549 /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrow.png; sourceTree = "<group>"; };
+		3F1DD0521C0121C40092F549 /* pier-bold-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-bold-italic.otf"; sourceTree = "<group>"; };
+		3F1DD0531C0121C40092F549 /* pier-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-bold.otf"; sourceTree = "<group>"; };
+		3F1DD0541C0121C40092F549 /* pier-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-italic.otf"; sourceTree = "<group>"; };
+		3F1DD0551C0121C40092F549 /* pier-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-regular.otf"; sourceTree = "<group>"; };
+		3F1DD0561C0121C40092F549 /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
+		3F1DD0571C0121C40092F549 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		3F1DD05F1C0121D90092F549 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3F8C26141C00D943004E58AF /* EverythingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverythingTableViewCell.h; sourceTree = "<group>"; };
 		3F8C26151C00D943004E58AF /* EverythingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EverythingTableViewCell.m; sourceTree = "<group>"; };
 		3F8C26161C00D943004E58AF /* EverythingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EverythingTableViewCell.xib; sourceTree = "<group>"; };
@@ -81,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC12FA11C0076F100C088CC /* MapKit.framework in Frameworks */,
+				3F1DD0601C0121D90092F549 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +137,7 @@
 		3FA89AFE1C00683B009750DF = {
 			isa = PBXGroup;
 			children = (
-				DAC12FA01C0076F100C088CC /* MapKit.framework */,
+				3F1DD05F1C0121D90092F549 /* MapKit.framework */,
 				3FA89B091C00683B009750DF /* Caleche */,
 				3FA89B231C00683B009750DF /* CalecheTests */,
 				3FA89B2E1C00683B009750DF /* CalecheUITests */,
@@ -126,14 +158,16 @@
 		3FA89B091C00683B009750DF /* Caleche */ = {
 			isa = PBXGroup;
 			children = (
+				3F1DD04C1C01219D0092F549 /* AKAdressSearchTextField.h */,
+				3F1DD04D1C01219D0092F549 /* AKAdressSearchTextField.m */,
+				3F1DD0491C0120CF0092F549 /* AKPointAnnotation.h */,
+				3F1DD04A1C0120CF0092F549 /* AKPointAnnotation.m */,
 				DAC12FC61C010A3100C088CC /* MarqueeLabel */,
 				DAC12FBF1C01060000C088CC /* PulsingHalo */,
 				3FA89B0D1C00683B009750DF /* AppDelegate.h */,
 				3FA89B0E1C00683B009750DF /* AppDelegate.m */,
 				3FA89B101C00683B009750DF /* ViewController.h */,
 				3FA89B111C00683B009750DF /* ViewController.m */,
-				DAC12FBC1C00D2DF00C088CC /* AKPointAnnotation.h */,
-				DAC12FBD1C00D2DF00C088CC /* AKPointAnnotation.m */,
 				3FA89B131C00683B009750DF /* Main.storyboard */,
 				3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */,
 				3FA89B3D1C007FA7009750DF /* ResultsViewController.h */,
@@ -154,6 +188,9 @@
 			children = (
 				DAC12FA21C007E3500C088CC /* Fonts */,
 				3FA89B0B1C00683B009750DF /* main.m */,
+				3F1DD0561C0121C40092F549 /* pin@2x.png */,
+				3F1DD0571C0121C40092F549 /* search.png */,
+				3F1DD04F1C0121AE0092F549 /* caleche logo.png */,
 				3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */,
 				3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */,
 				3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */,
@@ -183,14 +220,11 @@
 		DAC12FA21C007E3500C088CC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				DAC12FBA1C00CFE600C088CC /* pin@2x.png */,
-				DAC12FB61C00C74F00C088CC /* backArrow.png */,
-				DAC12FB41C00C15800C088CC /* search.png */,
-				DAC12FAD1C008EED00C088CC /* caleche logo.png */,
-				DAC12FA31C007E6B00C088CC /* pier-bold-italic.otf */,
-				DAC12FA41C007E6B00C088CC /* pier-bold.otf */,
-				DAC12FA51C007E6B00C088CC /* pier-italic.otf */,
-				DAC12FA61C007E6B00C088CC /* pier-regular.otf */,
+				3F1DD0511C0121C40092F549 /* backArrow.png */,
+				3F1DD0521C0121C40092F549 /* pier-bold-italic.otf */,
+				3F1DD0531C0121C40092F549 /* pier-bold.otf */,
+				3F1DD0541C0121C40092F549 /* pier-italic.otf */,
+				3F1DD0551C0121C40092F549 /* pier-regular.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -198,8 +232,8 @@
 		DAC12FBF1C01060000C088CC /* PulsingHalo */ = {
 			isa = PBXGroup;
 			children = (
-				DAC12FC01C01060000C088CC /* PulsingHaloLayer.h */,
-				DAC12FC11C01060000C088CC /* PulsingHaloLayer.m */,
+				3F1DD0431C011F720092F549 /* PulsingHaloLayer.h */,
+				3F1DD0441C011F720092F549 /* PulsingHaloLayer.m */,
 			);
 			path = PulsingHalo;
 			sourceTree = "<group>";
@@ -207,8 +241,8 @@
 		DAC12FC61C010A3100C088CC /* MarqueeLabel */ = {
 			isa = PBXGroup;
 			children = (
-				DAC12FC31C010A2C00C088CC /* MarqueeLabel.h */,
-				DAC12FC41C010A2C00C088CC /* MarqueeLabel.m */,
+				3F1DD0461C0120BF0092F549 /* MarqueeLabel.h */,
+				3F1DD0471C0120BF0092F549 /* MarqueeLabel.m */,
 			);
 			name = MarqueeLabel;
 			sourceTree = "<group>";
@@ -317,17 +351,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC12FA71C007E6B00C088CC /* pier-bold-italic.otf in Resources */,
-				DAC12FAA1C007E6B00C088CC /* pier-regular.otf in Resources */,
-				DAC12FAE1C008EED00C088CC /* caleche logo.png in Resources */,
+				3F1DD0611C01230F0092F549 /* ViewController.h in Resources */,
+				3F1DD0621C01230F0092F549 /* ViewController.m in Resources */,
+				3F1DD0581C0121C40092F549 /* backArrow.png in Resources */,
 				3FA89B1A1C00683B009750DF /* LaunchScreen.storyboard in Resources */,
+				3F1DD05A1C0121C40092F549 /* pier-bold.otf in Resources */,
+				3F1DD05E1C0121C40092F549 /* search.png in Resources */,
+				3F1DD0501C0121AE0092F549 /* caleche logo.png in Resources */,
 				3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */,
 				3F03ECD81C00C5820078FA6B /* arrow_up@2x.png in Resources */,
 				3FA89B171C00683B009750DF /* Assets.xcassets in Resources */,
+				3F1DD05B1C0121C40092F549 /* pier-italic.otf in Resources */,
 				3F03ECD21C00C4180078FA6B /* arrow_pink@2x.png in Resources */,
+				3F1DD05C1C0121C40092F549 /* pier-regular.otf in Resources */,
 				3F8C26181C00D943004E58AF /* EverythingTableViewCell.xib in Resources */,
+				3F1DD0591C0121C40092F549 /* pier-bold-italic.otf in Resources */,
 				3F03ECD51C00C5650078FA6B /* arrow_down@2x.png in Resources */,
 				3FA89B151C00683B009750DF /* Main.storyboard in Resources */,
+				3F1DD05D1C0121C40092F549 /* pin@2x.png in Resources */,
 				3F03ECDB1C00C70D0078FA6B /* arrow_left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,14 +398,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC12FC21C01060000C088CC /* PulsingHaloLayer.m in Sources */,
+				3F1DD0451C011F720092F549 /* PulsingHaloLayer.m in Sources */,
 				3FA89B121C00683B009750DF /* ViewController.m in Sources */,
-				DAC12FB31C00BFB600C088CC /* AKAdressSearchTextField.m in Sources */,
-				DAC12FC51C010A2C00C088CC /* MarqueeLabel.m in Sources */,
 				3FA89B0F1C00683B009750DF /* AppDelegate.m in Sources */,
+				3F1DD0481C0120BF0092F549 /* MarqueeLabel.m in Sources */,
 				3F8C26171C00D943004E58AF /* EverythingTableViewCell.m in Sources */,
 				3FA89B0C1C00683B009750DF /* main.m in Sources */,
+				3F1DD04E1C01219D0092F549 /* AKAdressSearchTextField.m in Sources */,
 				3FA89B3F1C007FA7009750DF /* ResultsViewController.m in Sources */,
+				3F1DD04B1C0120CF0092F549 /* AKPointAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

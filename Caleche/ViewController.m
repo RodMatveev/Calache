@@ -132,6 +132,7 @@
         [self.view layoutIfNeeded];
     } completion:^ (BOOL finished)
      {
+         NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(showResultsViewController) userInfo:nil repeats:NO];
          MarqueeLabel *scrollyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 70) rate:50.0 andFadeLength:0];
          scrollyLabel.marqueeType = MLContinuous;
          NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport "];
@@ -179,6 +180,18 @@
          }];
      }];
 }
+
+- (void)showResultsViewController
+{
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    ResultsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultsViewController"];
+    //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self.navigationController pushViewController:vc animated:YES];
+    //[self.navigationController presentViewController:nav animated:YES completion:nil];
+}
+
+
 
 - (IBAction)startButtonPressed:(id)sender {
     [self.textField endEditing:YES];

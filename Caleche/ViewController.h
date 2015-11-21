@@ -13,6 +13,7 @@
 #import "AKPointAnnotation.h"
 #import "PulsingHaloLayer.h"
 #import "MarqueeLabel.h"
+#import "ResultsViewController.h"
 
 @interface ViewController : UIViewController <UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 {

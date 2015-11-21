@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-428" y="419"/>
         </scene>
-        <!--Caleche-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -41,6 +42,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU0-YZ-eNN">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="START">
@@ -52,6 +54,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6he-cL-aQi">
                                 <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="END">
@@ -66,6 +69,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TlT-at-AsT" customClass="AKAdressSearchTextField">
                                         <rect key="frame" x="12" y="10" width="576" height="40"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" red="0.29411764709999999" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.29411764709999999" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,12 +78,14 @@
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search.png" translatesAutoresizingMaskIntoConstraints="NO" id="0LS-Ol-AmR">
                                         <rect key="frame" x="22" y="20" width="20" height="20"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="bVo-GO-Pgg"/>
                                             <constraint firstAttribute="height" constant="20" id="ypQ-wn-W61"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" red="0.29411764705882354" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="TlT-at-AsT" secondAttribute="trailing" constant="12" id="18J-gg-yDO"/>
@@ -93,6 +99,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gn-Ej-tBs">
                                 <rect key="frame" x="500" y="436" width="70" height="70"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.011764705882352941" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="36H-3U-Vph"/>
@@ -114,6 +121,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin.png" translatesAutoresizingMaskIntoConstraints="NO" id="uw1-V6-7nU">
                                 <rect key="frame" x="275" y="267" width="50" height="60"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="7hL-FC-D5K"/>
                                     <constraint firstAttribute="width" secondItem="uw1-V6-7nU" secondAttribute="height" multiplier="10:12" id="h7f-UX-0RQ"/>
@@ -121,6 +129,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZ6-sP-c2A">
                                 <rect key="frame" x="0.0" y="110" width="600" height="426"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -162,6 +171,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="gzw-8a-ij7"/>
                     <connections>
+                        <outlet property="bottomLayout" destination="BYN-Tg-pvP" id="xMH-wG-49m"/>
+                        <outlet property="endButton" destination="6he-cL-aQi" id="RBr-qI-4xW"/>
+                        <outlet property="goButton" destination="3gn-Ej-tBs" id="RVd-1b-0IQ"/>
+                        <outlet property="goButtonBottom" destination="6CT-JZ-D3o" id="GCH-Kz-Ug4"/>
+                        <outlet property="mapView" destination="dsP-9X-0JF" id="0y2-Fb-Bc0"/>
+                        <outlet property="pinImageView" destination="uw1-V6-7nU" id="EmF-tO-YY3"/>
+                        <outlet property="searchImageView" destination="0LS-Ol-AmR" id="TLo-p4-ZyW"/>
+                        <outlet property="startButton" destination="cU0-YZ-eNN" id="97p-uV-e15"/>
+                        <outlet property="tableView" destination="hZ6-sP-c2A" id="JVa-CJ-VHm"/>
+                        <outlet property="textField" destination="TlT-at-AsT" id="W6X-gS-VEH"/>
+                        <outlet property="textFieldView" destination="Afo-Or-1t5" id="bV2-Em-7h4"/>
+                        <outlet property="topLayout" destination="uy4-df-55J" id="41K-fy-FXz"/>
                         <segue destination="djc-hC-a2t" kind="show" id="bFz-Ng-dKl"/>
                     </connections>
                 </viewController>
@@ -172,7 +193,7 @@
         <!--Results View Controller-->
         <scene sceneID="mpV-ty-CSN">
             <objects>
-                <viewController id="djc-hC-a2t" customClass="ResultsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsViewController" id="djc-hC-a2t" customClass="ResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="geU-oP-z8B"/>
                         <viewControllerLayoutGuide type="bottom" id="7Ib-Op-COe"/>
@@ -644,5 +665,7 @@
     <resources>
         <image name="arrow_left.png" width="50" height="69"/>
         <image name="arrow_pink.png" width="50" height="69"/>
+        <image name="pin.png" width="32" height="32"/>
+        <image name="search.png" width="64" height="64"/>
     </resources>
 </document>
