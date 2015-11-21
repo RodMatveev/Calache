@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F03ECD21C00C4180078FA6B /* arrow_pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */; };
+		3F03ECD31C00C4180078FA6B /* arrow_pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */; };
+		3F03ECD51C00C5650078FA6B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */; };
+		3F03ECD61C00C5650078FA6B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */; };
+		3F03ECD81C00C5820078FA6B /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */; };
+		3F03ECD91C00C5820078FA6B /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */; };
+		3F03ECDB1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
+		3F03ECDC1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
+		3F8C26171C00D943004E58AF /* EverythingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8C26151C00D943004E58AF /* EverythingTableViewCell.m */; };
+		3F8C26181C00D943004E58AF /* EverythingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F8C26161C00D943004E58AF /* EverythingTableViewCell.xib */; };
 		3FA89B0C1C00683B009750DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B0B1C00683B009750DF /* main.m */; };
 		3FA89B0F1C00683B009750DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B0E1C00683B009750DF /* AppDelegate.m */; };
 		3FA89B121C00683B009750DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B111C00683B009750DF /* ViewController.m */; };
@@ -15,6 +25,8 @@
 		3FA89B1A1C00683B009750DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA89B181C00683B009750DF /* LaunchScreen.storyboard */; };
 		3FA89B251C00683B009750DF /* CalecheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B241C00683B009750DF /* CalecheTests.m */; };
 		3FA89B301C00683B009750DF /* CalecheUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B2F1C00683B009750DF /* CalecheUITests.m */; };
+		3FA89B3F1C007FA7009750DF /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B3E1C007FA7009750DF /* ResultsViewController.m */; };
+		3FA89B401C007FA7009750DF /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B3E1C007FA7009750DF /* ResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_pink@2x.png"; sourceTree = "<group>"; };
+		3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
+		3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_up@2x.png"; path = "../../../Downloads/arrow_up@2x.png"; sourceTree = "<group>"; };
+		3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
+		3F8C26141C00D943004E58AF /* EverythingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverythingTableViewCell.h; sourceTree = "<group>"; };
+		3F8C26151C00D943004E58AF /* EverythingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EverythingTableViewCell.m; sourceTree = "<group>"; };
+		3F8C26161C00D943004E58AF /* EverythingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EverythingTableViewCell.xib; sourceTree = "<group>"; };
 		3FA89B071C00683B009750DF /* Caleche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caleche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA89B0B1C00683B009750DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FA89B0D1C00683B009750DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +70,8 @@
 		3FA89B2B1C00683B009750DF /* CalecheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalecheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA89B2F1C00683B009750DF /* CalecheUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalecheUITests.m; sourceTree = "<group>"; };
 		3FA89B311C00683B009750DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FA89B3D1C007FA7009750DF /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		3FA89B3E1C007FA7009750DF /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +127,11 @@
 				3FA89B101C00683B009750DF /* ViewController.h */,
 				3FA89B111C00683B009750DF /* ViewController.m */,
 				3FA89B131C00683B009750DF /* Main.storyboard */,
+				3FA89B3D1C007FA7009750DF /* ResultsViewController.h */,
+				3F8C26141C00D943004E58AF /* EverythingTableViewCell.h */,
+				3F8C26151C00D943004E58AF /* EverythingTableViewCell.m */,
+				3F8C26161C00D943004E58AF /* EverythingTableViewCell.xib */,
+				3FA89B3E1C007FA7009750DF /* ResultsViewController.m */,
 				3FA89B161C00683B009750DF /* Assets.xcassets */,
 				3FA89B181C00683B009750DF /* LaunchScreen.storyboard */,
 				3FA89B1B1C00683B009750DF /* Info.plist */,
@@ -118,6 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				3FA89B0B1C00683B009750DF /* main.m */,
+				3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */,
+				3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */,
+				3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */,
+				3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -207,6 +237,7 @@
 				TargetAttributes = {
 					3FA89B061C00683B009750DF = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = D5F6WJW852;
 					};
 					3FA89B1F1C00683B009750DF = {
 						CreatedOnToolsVersion = 7.1;
@@ -244,8 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA89B1A1C00683B009750DF /* LaunchScreen.storyboard in Resources */,
+				3F03ECD81C00C5820078FA6B /* arrow_up@2x.png in Resources */,
 				3FA89B171C00683B009750DF /* Assets.xcassets in Resources */,
+				3F03ECD21C00C4180078FA6B /* arrow_pink@2x.png in Resources */,
+				3F8C26181C00D943004E58AF /* EverythingTableViewCell.xib in Resources */,
+				3F03ECD51C00C5650078FA6B /* arrow_down@2x.png in Resources */,
 				3FA89B151C00683B009750DF /* Main.storyboard in Resources */,
+				3F03ECDB1C00C70D0078FA6B /* arrow_left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +289,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F03ECD61C00C5650078FA6B /* arrow_down@2x.png in Resources */,
+				3F03ECD91C00C5820078FA6B /* arrow_up@2x.png in Resources */,
+				3F03ECD31C00C4180078FA6B /* arrow_pink@2x.png in Resources */,
+				3F03ECDC1C00C70D0078FA6B /* arrow_left@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +312,9 @@
 			files = (
 				3FA89B121C00683B009750DF /* ViewController.m in Sources */,
 				3FA89B0F1C00683B009750DF /* AppDelegate.m in Sources */,
+				3F8C26171C00D943004E58AF /* EverythingTableViewCell.m in Sources */,
 				3FA89B0C1C00683B009750DF /* main.m in Sources */,
+				3FA89B3F1C007FA7009750DF /* ResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA89B251C00683B009750DF /* CalecheTests.m in Sources */,
+				3FA89B401C007FA7009750DF /* ResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Caleche/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMAK.Caleche;
@@ -422,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Caleche/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMAK.Caleche;
@@ -496,6 +541,7 @@
 				3FA89B361C00683B009750DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FA89B371C00683B009750DF /* Build configuration list for PBXNativeTarget "CalecheTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +550,7 @@
 				3FA89B391C00683B009750DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FA89B3A1C00683B009750DF /* Build configuration list for PBXNativeTarget "CalecheUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +559,7 @@
 				3FA89B3C1C00683B009750DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

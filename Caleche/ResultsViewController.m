@@ -1,0 +1,109 @@
+//
+//  ResultsViewController.m
+//  Caleche
+//
+//  Created by Rod Matveev on 21/11/2015.
+//  Copyright © 2015 Rod Matveev. All rights reserved.
+//
+
+#import "ResultsViewController.h"
+#import "EverythingTableViewCell.h"
+
+@interface ResultsViewController (){
+    int selectedService;
+    float resultsViewHeight;
+}
+
+@end
+
+@implementation ResultsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.resultsTable.delegate = self;
+    self.resultsTable.dataSource = self;
+    selectedService = 100;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(selectedService == (int)indexPath.row){
+        return 69 + (resultsViewHeight * 3) + 10;
+    }else{
+        if(indexPath.row == 0){
+            return 304;
+        }else if(indexPath.row == 1){
+            return 30;
+        }else{
+            return 69;
+        }
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(tableView == self.resultsTable){
+        if(indexPath.row == 0){
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CheapCloseCell"];
+            //UIView *square = (UIView *)[cell.contentView viewWithTag:3];
+            UIView *backgroundRight = (UIView *)[cell.contentView viewWithTag:2];
+            backgroundRight.layer.borderColor = [UIColor whiteColor].CGColor;
+            backgroundRight.layer.borderWidth = 1.5;
+            
+            return cell;
+        }else if(indexPath.row == 1){
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EverythingHeader"];
+            return cell;
+        }else{
+            static NSString *EverythingCellIdentifier = @"EverythingCell";
+            EverythingTableViewCell *cell = (EverythingTableViewCell *)[tableView dequeueReusableCellWithIdentifier: EverythingCellIdentifier];
+            if (cell == nil)
+            {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EverythingTableViewCell" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+            }
+            resultsViewHeight = cell.resultsView.frame.size.height;
+            if(indexPath.row %2 == 0){
+                cell.background.backgroundColor = [UIColor lightGrayColor];
+                cell.extendedBackground.backgroundColor = [UIColor darkGrayColor];
+            }else{
+                cell.extendedBackground.backgroundColor = [UIColor darkGrayColor];
+                cell.extendedBackground.backgroundColor = [UIColor lightGrayColor];
+            }
+            if(indexPath.row == 2){
+                cell.extendedBackground.backgroundColor = [UIColor clearColor];
+            }
+            /*if((int)indexPath.row == selectedService){
+                cell.background.frame = CGRectMake(cell.background.frame.origin.x, cell.background.frame.origin.y, cell.background.frame.size.width, cell.background.frame.size.height+100);
+            }*/
+            return cell;
+        }
+    }
+    return nil;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row > 1){
+        selectedService = (int)indexPath.row;
+        [tableView beginUpdates];
+        [tableView endUpdates];
+    }
+}
+
+@end
