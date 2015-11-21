@@ -15,6 +15,19 @@
 		3FA89B1A1C00683B009750DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA89B181C00683B009750DF /* LaunchScreen.storyboard */; };
 		3FA89B251C00683B009750DF /* CalecheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B241C00683B009750DF /* CalecheTests.m */; };
 		3FA89B301C00683B009750DF /* CalecheUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA89B2F1C00683B009750DF /* CalecheUITests.m */; };
+		DAC12FA11C0076F100C088CC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC12FA01C0076F100C088CC /* MapKit.framework */; };
+		DAC12FA71C007E6B00C088CC /* pier-bold-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FA31C007E6B00C088CC /* pier-bold-italic.otf */; };
+		DAC12FA81C007E6B00C088CC /* pier-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FA41C007E6B00C088CC /* pier-bold.otf */; };
+		DAC12FA91C007E6B00C088CC /* pier-italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FA51C007E6B00C088CC /* pier-italic.otf */; };
+		DAC12FAA1C007E6B00C088CC /* pier-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FA61C007E6B00C088CC /* pier-regular.otf */; };
+		DAC12FAE1C008EED00C088CC /* caleche logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FAD1C008EED00C088CC /* caleche logo.png */; };
+		DAC12FB31C00BFB600C088CC /* AKAdressSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC12FB21C00BFB600C088CC /* AKAdressSearchTextField.m */; };
+		DAC12FB51C00C15800C088CC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FB41C00C15800C088CC /* search.png */; };
+		DAC12FB71C00C74F00C088CC /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FB61C00C74F00C088CC /* backArrow.png */; };
+		DAC12FBB1C00CFE600C088CC /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC12FBA1C00CFE600C088CC /* pin@2x.png */; };
+		DAC12FBE1C00D2DF00C088CC /* AKPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC12FBD1C00D2DF00C088CC /* AKPointAnnotation.m */; };
+		DAC12FC21C01060000C088CC /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC12FC11C01060000C088CC /* PulsingHaloLayer.m */; };
+		DAC12FC51C010A2C00C088CC /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC12FC41C010A2C00C088CC /* MarqueeLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +64,23 @@
 		3FA89B2B1C00683B009750DF /* CalecheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalecheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA89B2F1C00683B009750DF /* CalecheUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalecheUITests.m; sourceTree = "<group>"; };
 		3FA89B311C00683B009750DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAC12FA01C0076F100C088CC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DAC12FA31C007E6B00C088CC /* pier-bold-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-bold-italic.otf"; sourceTree = "<group>"; };
+		DAC12FA41C007E6B00C088CC /* pier-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-bold.otf"; sourceTree = "<group>"; };
+		DAC12FA51C007E6B00C088CC /* pier-italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-italic.otf"; sourceTree = "<group>"; };
+		DAC12FA61C007E6B00C088CC /* pier-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pier-regular.otf"; sourceTree = "<group>"; };
+		DAC12FAD1C008EED00C088CC /* caleche logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "caleche logo.png"; sourceTree = "<group>"; };
+		DAC12FB11C00BFB600C088CC /* AKAdressSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAdressSearchTextField.h; sourceTree = "<group>"; };
+		DAC12FB21C00BFB600C088CC /* AKAdressSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAdressSearchTextField.m; sourceTree = "<group>"; };
+		DAC12FB41C00C15800C088CC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		DAC12FB61C00C74F00C088CC /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrow.png; sourceTree = "<group>"; };
+		DAC12FBA1C00CFE600C088CC /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
+		DAC12FBC1C00D2DF00C088CC /* AKPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPointAnnotation.h; sourceTree = "<group>"; };
+		DAC12FBD1C00D2DF00C088CC /* AKPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPointAnnotation.m; sourceTree = "<group>"; };
+		DAC12FC01C01060000C088CC /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
+		DAC12FC11C01060000C088CC /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
+		DAC12FC31C010A2C00C088CC /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		DAC12FC41C010A2C00C088CC /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC12FA11C0076F100C088CC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +112,7 @@
 		3FA89AFE1C00683B009750DF = {
 			isa = PBXGroup;
 			children = (
+				DAC12FA01C0076F100C088CC /* MapKit.framework */,
 				3FA89B091C00683B009750DF /* Caleche */,
 				3FA89B231C00683B009750DF /* CalecheTests */,
 				3FA89B2E1C00683B009750DF /* CalecheUITests */,
@@ -101,11 +133,17 @@
 		3FA89B091C00683B009750DF /* Caleche */ = {
 			isa = PBXGroup;
 			children = (
+				DAC12FC61C010A3100C088CC /* MarqueeLabel */,
+				DAC12FBF1C01060000C088CC /* PulsingHalo */,
 				3FA89B0D1C00683B009750DF /* AppDelegate.h */,
 				3FA89B0E1C00683B009750DF /* AppDelegate.m */,
 				3FA89B101C00683B009750DF /* ViewController.h */,
 				3FA89B111C00683B009750DF /* ViewController.m */,
+				DAC12FBC1C00D2DF00C088CC /* AKPointAnnotation.h */,
+				DAC12FBD1C00D2DF00C088CC /* AKPointAnnotation.m */,
 				3FA89B131C00683B009750DF /* Main.storyboard */,
+				DAC12FB11C00BFB600C088CC /* AKAdressSearchTextField.h */,
+				DAC12FB21C00BFB600C088CC /* AKAdressSearchTextField.m */,
 				3FA89B161C00683B009750DF /* Assets.xcassets */,
 				3FA89B181C00683B009750DF /* LaunchScreen.storyboard */,
 				3FA89B1B1C00683B009750DF /* Info.plist */,
@@ -117,6 +155,7 @@
 		3FA89B0A1C00683B009750DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DAC12FA21C007E3500C088CC /* Fonts */,
 				3FA89B0B1C00683B009750DF /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +177,39 @@
 				3FA89B311C00683B009750DF /* Info.plist */,
 			);
 			path = CalecheUITests;
+			sourceTree = "<group>";
+		};
+		DAC12FA21C007E3500C088CC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DAC12FBA1C00CFE600C088CC /* pin@2x.png */,
+				DAC12FB61C00C74F00C088CC /* backArrow.png */,
+				DAC12FB41C00C15800C088CC /* search.png */,
+				DAC12FAD1C008EED00C088CC /* caleche logo.png */,
+				DAC12FA31C007E6B00C088CC /* pier-bold-italic.otf */,
+				DAC12FA41C007E6B00C088CC /* pier-bold.otf */,
+				DAC12FA51C007E6B00C088CC /* pier-italic.otf */,
+				DAC12FA61C007E6B00C088CC /* pier-regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		DAC12FBF1C01060000C088CC /* PulsingHalo */ = {
+			isa = PBXGroup;
+			children = (
+				DAC12FC01C01060000C088CC /* PulsingHaloLayer.h */,
+				DAC12FC11C01060000C088CC /* PulsingHaloLayer.m */,
+			);
+			path = PulsingHalo;
+			sourceTree = "<group>";
+		};
+		DAC12FC61C010A3100C088CC /* MarqueeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DAC12FC31C010A2C00C088CC /* MarqueeLabel.h */,
+				DAC12FC41C010A2C00C088CC /* MarqueeLabel.m */,
+			);
+			name = MarqueeLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +315,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC12FA71C007E6B00C088CC /* pier-bold-italic.otf in Resources */,
+				DAC12FAA1C007E6B00C088CC /* pier-regular.otf in Resources */,
+				DAC12FAE1C008EED00C088CC /* caleche logo.png in Resources */,
 				3FA89B1A1C00683B009750DF /* LaunchScreen.storyboard in Resources */,
 				3FA89B171C00683B009750DF /* Assets.xcassets in Resources */,
+				DAC12FA91C007E6B00C088CC /* pier-italic.otf in Resources */,
+				DAC12FA81C007E6B00C088CC /* pier-bold.otf in Resources */,
+				DAC12FBB1C00CFE600C088CC /* pin@2x.png in Resources */,
+				DAC12FB71C00C74F00C088CC /* backArrow.png in Resources */,
+				DAC12FB51C00C15800C088CC /* search.png in Resources */,
 				3FA89B151C00683B009750DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,9 +350,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC12FC21C01060000C088CC /* PulsingHaloLayer.m in Sources */,
 				3FA89B121C00683B009750DF /* ViewController.m in Sources */,
+				DAC12FB31C00BFB600C088CC /* AKAdressSearchTextField.m in Sources */,
+				DAC12FC51C010A2C00C088CC /* MarqueeLabel.m in Sources */,
 				3FA89B0F1C00683B009750DF /* AppDelegate.m in Sources */,
 				3FA89B0C1C00683B009750DF /* main.m in Sources */,
+				DAC12FBE1C00D2DF00C088CC /* AKPointAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +580,7 @@
 				3FA89B361C00683B009750DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FA89B371C00683B009750DF /* Build configuration list for PBXNativeTarget "CalecheTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +589,7 @@
 				3FA89B391C00683B009750DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FA89B3A1C00683B009750DF /* Build configuration list for PBXNativeTarget "CalecheUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +598,7 @@
 				3FA89B3C1C00683B009750DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

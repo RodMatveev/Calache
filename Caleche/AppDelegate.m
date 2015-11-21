@@ -14,10 +14,58 @@
 
 @implementation AppDelegate
 
++ (UIColor*)calechePink {
+    return [UIColor colorWithRed:0.957f green:0.012f blue:0.325f alpha:1.00f];
+}
+
++ (UIColor*)calecheDark {
+    return [UIColor colorWithRed:0.294f green:0.290f blue:0.290f alpha:1.00f];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if(self.locationManager==nil){
+        
+        _locationManager=[[CLLocationManager alloc] init];
+        
+        
+        //I'm using ARC with this project so no need to release
+        
+        _locationManager.delegate=self;
+        _locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+        _locationManager.distanceFilter=500;
+        self.locationManager=_locationManager;
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        [self.locationManager startUpdatingLocation];
+    }
     return YES;
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    /*UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Unable to find your location" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [errorAlert addAction:defaultAction];
+    [self presentViewController:errorAlert animated:YES completion:nil];*/
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        NSLog(@"%@", [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude]);
+        NSLog(@"%@", [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude]);
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
