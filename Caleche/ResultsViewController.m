@@ -8,6 +8,7 @@
 
 #import "ResultsViewController.h"
 #import "EverythingTableViewCell.h"
+#import "AppDelegate.h"
 
 @interface ResultsViewController (){
     int selectedService;
@@ -21,6 +22,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    unselectedTextColor = [UIColor colorWithRed:0.573f green:0.580f blue:0.592f alpha:1.00f];
+    
+    self.navigationController.navigationBar.tintColor = unselectedTextColor;
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *backBtnImage = [UIImage imageNamed:@"backArrow"];
+    backBtnImage = [backBtnImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    //backBtnImage = [AppDelegate calecheDark];
+    [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(goback) forControlEvents:UIControlEventTouchUpInside];
+    backBtn.frame = CGRectMake(0, 0, 30, 30);
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn] ;
+    self.navigationItem.leftBarButtonItem = backButton;
     // Do any additional setup after loading the view.
     self.resultsTable.delegate = self;
     self.resultsTable.dataSource = self;

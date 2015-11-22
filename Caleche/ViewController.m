@@ -133,7 +133,7 @@
     } completion:^ (BOOL finished)
      {
          NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(showResultsViewController) userInfo:nil repeats:NO];
-         MarqueeLabel *scrollyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 70) rate:50.0 andFadeLength:0];
+         scrollyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 70) rate:50.0 andFadeLength:0];
          scrollyLabel.marqueeType = MLContinuous;
          NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport "];
          [text addAttribute: NSForegroundColorAttributeName value: [AppDelegate calechePink] range: NSMakeRange(0, 22)];
@@ -149,7 +149,7 @@
          scrollyLabel.font = [UIFont fontWithName:@"Futura" size:30];
          //scrollyLabel.textColor = [AppDelegate calecheDark];
          [self.view addSubview:scrollyLabel];
-         PulsingHaloLayer *halo = [PulsingHaloLayer layer];
+         halo = [PulsingHaloLayer layer];
          calecheLogo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width)];
          calecheLogo.center = self.mapView.center;
          calecheLogo.backgroundColor = [AppDelegate calecheDark];
@@ -186,8 +186,19 @@
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
     ResultsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultsViewController"];
+    vc.startCoordinate = self.startCoordinate;
+    vc.endCoordinate = self.endCoordinate;
     //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self.navigationController pushViewController:vc animated:YES];
+    whiteView.frame = CGRectNull;
+    calecheLogo.frame = CGRectNull;
+    scrollyLabel.frame = CGRectNull;
+    halo.frame = CGRectNull;
+    _goButtonBottom.constant = 30;
+    _topLayout.constant = 0;
+    [self.view setNeedsUpdateConstraints];
+    [self.view layoutIfNeeded];
+    [self endButtonPressed:self];
     //[self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 

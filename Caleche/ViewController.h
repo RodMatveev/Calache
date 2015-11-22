@@ -26,6 +26,8 @@
     UIButton *stopEditing;
     NSArray *textSuggestions;
     UITapGestureRecognizer *tap;
+    PulsingHaloLayer *halo;
+    MarqueeLabel *scrollyLabel;
 }
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *goButtonBottom;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomLayout;

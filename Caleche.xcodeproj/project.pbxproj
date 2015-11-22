@@ -11,8 +11,6 @@
 		3F03ECD31C00C4180078FA6B /* arrow_pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */; };
 		3F03ECD51C00C5650078FA6B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */; };
 		3F03ECD61C00C5650078FA6B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */; };
-		3F03ECD81C00C5820078FA6B /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */; };
-		3F03ECD91C00C5820078FA6B /* arrow_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */; };
 		3F03ECDB1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
 		3F03ECDC1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
 		3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */; };
@@ -65,11 +63,10 @@
 /* Begin PBXFileReference section */
 		3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_pink@2x.png"; sourceTree = "<group>"; };
 		3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
-		3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_up@2x.png"; path = "../../../Downloads/arrow_up@2x.png"; sourceTree = "<group>"; };
 		3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
 		3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardTemp.storyboard; sourceTree = "<group>"; };
-		3F1DD0431C011F720092F549 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PulsingHaloLayer.h; path = "../../../../Downloads/PulsingHalo-master/PulsingHalo/PulsingHaloLayer.h"; sourceTree = "<group>"; };
-		3F1DD0441C011F720092F549 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PulsingHaloLayer.m; path = "../../../../Downloads/PulsingHalo-master/PulsingHalo/PulsingHaloLayer.m"; sourceTree = "<group>"; };
+		3F1DD0431C011F720092F549 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PulsingHaloLayer.h; path = "../../../../../../Downloads/PulsingHalo-master/PulsingHalo/PulsingHaloLayer.h"; sourceTree = "<group>"; };
+		3F1DD0441C011F720092F549 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PulsingHaloLayer.m; path = "../../../../../../Downloads/PulsingHalo-master/PulsingHalo/PulsingHaloLayer.m"; sourceTree = "<group>"; };
 		3F1DD0461C0120BF0092F549 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
 		3F1DD0471C0120BF0092F549 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 		3F1DD0491C0120CF0092F549 /* AKPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPointAnnotation.h; sourceTree = "<group>"; };
@@ -170,10 +167,10 @@
 				3FA89B111C00683B009750DF /* ViewController.m */,
 				3FA89B131C00683B009750DF /* Main.storyboard */,
 				3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */,
-				3FA89B3D1C007FA7009750DF /* ResultsViewController.h */,
 				3F8C26141C00D943004E58AF /* EverythingTableViewCell.h */,
 				3F8C26151C00D943004E58AF /* EverythingTableViewCell.m */,
 				3F8C26161C00D943004E58AF /* EverythingTableViewCell.xib */,
+				3FA89B3D1C007FA7009750DF /* ResultsViewController.h */,
 				3FA89B3E1C007FA7009750DF /* ResultsViewController.m */,
 				3FA89B161C00683B009750DF /* Assets.xcassets */,
 				3FA89B181C00683B009750DF /* LaunchScreen.storyboard */,
@@ -193,7 +190,6 @@
 				3F1DD04F1C0121AE0092F549 /* caleche logo.png */,
 				3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */,
 				3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */,
-				3F03ECD71C00C5820078FA6B /* arrow_up@2x.png */,
 				3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */,
 			);
 			name = "Supporting Files";
@@ -314,7 +310,7 @@
 				TargetAttributes = {
 					3FA89B061C00683B009750DF = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = D5F6WJW852;
+						DevelopmentTeam = GTRCKLG3DY;
 					};
 					3FA89B1F1C00683B009750DF = {
 						CreatedOnToolsVersion = 7.1;
@@ -359,7 +355,6 @@
 				3F1DD05E1C0121C40092F549 /* search.png in Resources */,
 				3F1DD0501C0121AE0092F549 /* caleche logo.png in Resources */,
 				3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */,
-				3F03ECD81C00C5820078FA6B /* arrow_up@2x.png in Resources */,
 				3FA89B171C00683B009750DF /* Assets.xcassets in Resources */,
 				3F1DD05B1C0121C40092F549 /* pier-italic.otf in Resources */,
 				3F03ECD21C00C4180078FA6B /* arrow_pink@2x.png in Resources */,
@@ -378,7 +373,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F03ECD61C00C5650078FA6B /* arrow_down@2x.png in Resources */,
-				3F03ECD91C00C5820078FA6B /* arrow_up@2x.png in Resources */,
 				3F03ECD31C00C4180078FA6B /* arrow_pink@2x.png in Resources */,
 				3F03ECDC1C00C70D0078FA6B /* arrow_left@2x.png in Resources */,
 			);
@@ -547,10 +541,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Caleche/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMAK.Caleche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -559,10 +555,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Caleche/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMAK.Caleche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
