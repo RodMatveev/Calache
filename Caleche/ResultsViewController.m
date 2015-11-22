@@ -40,7 +40,6 @@
     self.resultsTable.dataSource = self;
     selectedService = 100;
     sortByPrice = YES;
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,6 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(locationChanged:)
+                                                 name:@"locationChanged"
+                                               object:nil];
+    
     end = YES;
     [self registerForKeyboardNotifications];
     self.tableView.hidden = YES;
@@ -87,6 +93,15 @@
     mapRegion.span.latitudeDelta = 0.01;
     mapRegion.span.longitudeDelta = 0.01;
     [self.mapView setRegion:mapRegion animated: NO];
+}
+
+- (void)locationChanged:(NSNotification *)notification
+{
+    CLLocation *loc = notification.object;
+    if (self.startCoordinate.longitude == 0 && self.startCoordinate.latitude == 0)
+    {
+        self.startCoordinate = loc.coordinate;
+    }
 }
 
 - (void)backButtonPressed:(id)sender
