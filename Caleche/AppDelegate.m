@@ -63,8 +63,9 @@
     CLLocation *currentLocation = newLocation;
     
     if (currentLocation != nil) {
-        NSLog(@"%@", [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude]);
-        NSLog(@"%@", [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude]);
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"locationChanged"
+         object:currentLocation];
     }
 }
 
