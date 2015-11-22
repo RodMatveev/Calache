@@ -95,6 +95,38 @@
     self.textField.text = @"";
 }
 
+#pragma mark AFNetworking
+
+- (void)apiCall
+{
+    // 1
+    NSDictionary *postDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [NSNumber numberWithFloat:self.startCoordinate.latitude], @"start_latitude",
+                              [NSNumber numberWithFloat:self.startCoordinate.longitude], @"start_longitude",
+                              [NSNumber numberWithFloat:self.endCoordinate.latitude], @"end_latitude", [NSNumber numberWithFloat:self.endCoordinate.longitude], @"end_longitude",
+                              nil];
+    
+    NSString *baseURL = @"http://caleche.herokuapp.com/";
+    NSString *path = @"web/v1/request";
+
+    
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:baseURL]];
+                                     
+                                     
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:path parameters:postDict success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"response:%@",responseObject);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        NSLog(@"error:%@",error);
+
+    }];
+}
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -125,6 +157,7 @@
 }
 
 - (IBAction)goButtonPressed:(id)sender {
+    [self apiCall];
     _goButtonBottom.constant = -80;
     _topLayout.constant = -110;
     [self.view setNeedsUpdateConstraints];
