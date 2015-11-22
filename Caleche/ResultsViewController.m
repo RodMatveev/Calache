@@ -12,6 +12,7 @@
 @interface ResultsViewController (){
     int selectedService;
     float resultsViewHeight;
+    BOOL sortByPrice;
 }
 
 @end
@@ -24,6 +25,7 @@
     self.resultsTable.delegate = self;
     self.resultsTable.dataSource = self;
     selectedService = 100;
+    sortByPrice = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,12 +47,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(selectedService == (int)indexPath.row){
-        return 69 + (resultsViewHeight * 3) + 10;
+        return 69 + (resultsViewHeight) + 20;
     }else{
         if(indexPath.row == 0){
             return 304;
         }else if(indexPath.row == 1){
-            return 30;
+            return 65;
         }else{
             return 69;
         }
@@ -78,7 +80,7 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EverythingTableViewCell" owner:self options:nil];
                 cell = [nib objectAtIndex:0];
             }
-            resultsViewHeight = cell.resultsView.frame.size.height;
+            resultsViewHeight = cell.bookButton.frame.size.height;
             if(indexPath.row %2 == 0){
                 cell.background.backgroundColor = [UIColor lightGrayColor];
                 cell.extendedBackground.backgroundColor = [UIColor darkGrayColor];
@@ -103,6 +105,16 @@
         selectedService = (int)indexPath.row;
         [tableView beginUpdates];
         [tableView endUpdates];
+    }
+}
+
+-(IBAction)segmentSwitch:(id)sender{
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+    if(selectedSegment == 0){
+        sortByPrice = YES;
+    }else{
+        sortByPrice = NO;
     }
 }
 

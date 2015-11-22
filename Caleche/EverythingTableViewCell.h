@@ -13,5 +13,6 @@
 @property(weak,nonatomic) IBOutlet UIView *background;
 @property(weak,nonatomic) IBOutlet UIView *extendedBackground;
 @property(weak,nonatomic) IBOutlet UIView *resultsView;
+@property(weak,nonatomic) IBOutlet UIButton *bookButton;
 
 @end
