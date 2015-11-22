@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface ResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    UIColor *unselectedTextColor;
+}
 
 @property (weak,nonatomic) IBOutlet UITableView *resultsTable;
+@property CLLocationCoordinate2D startCoordinate;
+@property CLLocationCoordinate2D endCoordinate;
+@property (weak, nonatomic) IBOutlet UILabel *startAddress;
+@property (weak, nonatomic) IBOutlet UILabel *endAddress;
 
 @end
