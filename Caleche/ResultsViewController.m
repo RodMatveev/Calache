@@ -13,6 +13,7 @@
 @interface ResultsViewController (){
     int selectedService;
     float resultsViewHeight;
+    BOOL sortByPrice;
 }
 
 @end
@@ -38,66 +39,8 @@
     self.resultsTable.delegate = self;
     self.resultsTable.dataSource = self;
     selectedService = 100;
-    [self convertCoordinates];
+    sortByPrice = YES;
     
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 130, 30)];
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"Caleche";
-    titleLabel.font = [UIFont fontWithName:@"PierSans-Bold" size:18];
-    titleLabel.frame = CGRectMake(0, 0, 130, 30);
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = unselectedTextColor;
-    [titleView addSubview:titleLabel];
-    UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"caleche logo"]];
-    iv.frame = CGRectMake(0, 0, 30, 30);
-    [titleView addSubview:iv];
-    self.navigationItem.titleView = titleView;
-}
-
-- (void)goback
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
-    //UIGraphicsBeginImageContext(newSize);
-    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
-    // Pass 1.0 to force exact pixel size.
-    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
-    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
-}
-
-- (void)convertCoordinates
-{
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:self.startCoordinate.latitude longitude:self.startCoordinate.longitude];
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error){
-        CLPlacemark *placemark = placemarks[0];
-        NSLog(@"%@",placemark.name);
-        NSString *string = [[NSString alloc] init];
-        if (placemark.postalCode){
-            string = [NSString stringWithFormat:@"%@, %@", placemark.name, placemark.postalCode];
-        } else {
-            string = placemark.name;
-        }
-        self.startAddress.text = string;
-    }];
-    location = [[CLLocation alloc] initWithLatitude:self.endCoordinate.latitude longitude:self.endCoordinate.longitude];
-    geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error){
-        CLPlacemark *placemark = placemarks[0];
-        NSLog(@"%@",placemark.name);
-        NSString *string = [[NSString alloc] init];
-        if (placemark.postalCode){
-            string = [NSString stringWithFormat:@"%@, %@", placemark.name, placemark.postalCode];
-        } else {
-            string = placemark.name;
-        }
-        self.endAddress.text = string;
-    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,12 +62,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(selectedService == (int)indexPath.row){
-        return 69 + (resultsViewHeight * 3) + 10;
+        return 69 + (resultsViewHeight) + 20;
     }else{
         if(indexPath.row == 0){
             return 304;
         }else if(indexPath.row == 1){
-            return 30;
+            return 65;
         }else{
             return 69;
         }
@@ -152,7 +95,7 @@
                 NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"EverythingTableViewCell" owner:self options:nil];
                 cell = [nib objectAtIndex:0];
             }
-            resultsViewHeight = cell.resultsView.frame.size.height;
+            resultsViewHeight = cell.bookButton.frame.size.height;
             if(indexPath.row %2 == 0){
                 cell.background.backgroundColor = [UIColor lightGrayColor];
                 cell.extendedBackground.backgroundColor = [UIColor darkGrayColor];
@@ -178,6 +121,20 @@
         [tableView beginUpdates];
         [tableView endUpdates];
     }
+}
+
+-(IBAction)segmentSwitch:(id)sender{
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+    if(selectedSegment == 0){
+        sortByPrice = YES;
+    }else{
+        sortByPrice = NO;
+    }
+}
+
+-(void)goback{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
