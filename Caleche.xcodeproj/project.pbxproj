@@ -58,6 +58,9 @@
 		DAC12FFC1C01C0E500C088CC /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC12FF21C01C0E500C088CC /* UIProgressView+AFNetworking.m */; };
 		DAC12FFD1C01C0E500C088CC /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC12FF41C01C0E500C088CC /* UIRefreshControl+AFNetworking.m */; };
 		DAC12FFE1C01C0E500C088CC /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC12FF61C01C0E500C088CC /* UIWebView+AFNetworking.m */; };
+		DAC1301E1C02046E00C088CC /* GSTouchesShowingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC130011C02046E00C088CC /* GSTouchesShowingWindow.m */; };
+		DAC1301F1C02046E00C088CC /* GSTouchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC130021C02046E00C088CC /* GSTouchImage.png */; };
+		DAC130201C02046E00C088CC /* GSTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAC130031C02046E00C088CC /* GSTouchImage@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,10 @@
 		DAC12FF41C01C0E500C088CC /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		DAC12FF51C01C0E500C088CC /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		DAC12FF61C01C0E500C088CC /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		DAC130001C02046E00C088CC /* GSTouchesShowingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTouchesShowingWindow.h; sourceTree = "<group>"; };
+		DAC130011C02046E00C088CC /* GSTouchesShowingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTouchesShowingWindow.m; sourceTree = "<group>"; };
+		DAC130021C02046E00C088CC /* GSTouchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GSTouchImage.png; sourceTree = "<group>"; };
+		DAC130031C02046E00C088CC /* GSTouchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GSTouchImage@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +216,7 @@
 		3FA89B091C00683B009750DF /* Caleche */ = {
 			isa = PBXGroup;
 			children = (
+				DAC12FFF1C02046E00C088CC /* GSTouchesShowingWindow-master */,
 				DAC12FE41C01C0E500C088CC /* UIKit+AFNetworking */,
 				DAC12FC71C01C0DC00C088CC /* AFNetworking */,
 				3F1DD04C1C01219D0092F549 /* AKAdressSearchTextField.h */,
@@ -350,6 +358,17 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		DAC12FFF1C02046E00C088CC /* GSTouchesShowingWindow-master */ = {
+			isa = PBXGroup;
+			children = (
+				DAC130001C02046E00C088CC /* GSTouchesShowingWindow.h */,
+				DAC130011C02046E00C088CC /* GSTouchesShowingWindow.m */,
+				DAC130021C02046E00C088CC /* GSTouchImage.png */,
+				DAC130031C02046E00C088CC /* GSTouchImage@2x.png */,
+			);
+			path = "GSTouchesShowingWindow-master";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -459,6 +478,7 @@
 				3F1DD0581C0121C40092F549 /* backArrow.png in Resources */,
 				3FA89B1A1C00683B009750DF /* LaunchScreen.storyboard in Resources */,
 				3F1DD05A1C0121C40092F549 /* pier-bold.otf in Resources */,
+				DAC1301F1C02046E00C088CC /* GSTouchImage.png in Resources */,
 				3F1DD05E1C0121C40092F549 /* search.png in Resources */,
 				3F1DD0501C0121AE0092F549 /* caleche logo.png in Resources */,
 				3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */,
@@ -469,6 +489,7 @@
 				3F8C26181C00D943004E58AF /* EverythingTableViewCell.xib in Resources */,
 				3F1DD0591C0121C40092F549 /* pier-bold-italic.otf in Resources */,
 				3F03ECD51C00C5650078FA6B /* arrow_down@2x.png in Resources */,
+				DAC130201C02046E00C088CC /* GSTouchImage@2x.png in Resources */,
 				3FA89B151C00683B009750DF /* Main.storyboard in Resources */,
 				3F1DD05D1C0121C40092F549 /* pin@2x.png in Resources */,
 				3F03ECDB1C00C70D0078FA6B /* arrow_left@2x.png in Resources */,
@@ -512,6 +533,7 @@
 				DAC12FDD1C01C0DC00C088CC /* AFHTTPSessionManager.m in Sources */,
 				DAC12FF91C01C0E500C088CC /* UIAlertView+AFNetworking.m in Sources */,
 				DAC12FE11C01C0DC00C088CC /* AFURLRequestSerialization.m in Sources */,
+				DAC1301E1C02046E00C088CC /* GSTouchesShowingWindow.m in Sources */,
 				3FA89B0F1C00683B009750DF /* AppDelegate.m in Sources */,
 				DAC12FE31C01C0DC00C088CC /* AFURLSessionManager.m in Sources */,
 				3F1DD0481C0120BF0092F549 /* MarqueeLabel.m in Sources */,
@@ -667,6 +689,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Caleche/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMAK.Caleche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -681,6 +704,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Caleche/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RMAK.Caleche;
 				PRODUCT_NAME = "$(TARGET_NAME)";

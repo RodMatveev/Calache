@@ -20,7 +20,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.80000000000000004" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdJ-o0-2nf">
+                    <view tag="21" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdJ-o0-2nf">
                         <rect key="frame" x="14" y="0.0" width="292" height="172"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Addison Lee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpj-Ue-mtE">
@@ -43,7 +43,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jr-qW-2Pe">
+                            <button opaque="NO" tag="69" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jr-qW-2Pe">
                                 <rect key="frame" x="75" y="73" width="140" height="40"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -69,11 +69,47 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dir-wC-rmt">
+                                <rect key="frame" x="8" y="18" width="35" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxW-UQ-4xv">
+                                        <rect key="frame" x="2" y="1" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7L0-75-Xyo"/>
+                                            <constraint firstAttribute="width" constant="30" id="jg0-kB-2eg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2901960784" green="0.8397697771" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="EPN-Yw-ktM"/>
+                                    <constraint firstItem="qxW-UQ-4xv" firstAttribute="centerY" secondItem="dir-wC-rmt" secondAttribute="centerY" id="JJn-xa-ztl"/>
+                                    <constraint firstItem="qxW-UQ-4xv" firstAttribute="centerY" secondItem="dir-wC-rmt" secondAttribute="centerY" id="eCw-Pc-0Jn"/>
+                                    <constraint firstItem="qxW-UQ-4xv" firstAttribute="centerX" secondItem="dir-wC-rmt" secondAttribute="centerX" id="pAH-DV-ged"/>
+                                    <constraint firstAttribute="width" constant="35" id="sRK-xt-igT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="y6q-gl-cjA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eCw-Pc-0Jn"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.59999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7jr-qW-2Pe" firstAttribute="centerY" secondItem="qdJ-o0-2nf" secondAttribute="centerY" id="CBW-Op-IbK"/>
+                            <constraint firstItem="dir-wC-rmt" firstAttribute="top" secondItem="qdJ-o0-2nf" secondAttribute="top" constant="8" id="NAx-pr-cYx"/>
                             <constraint firstItem="mW9-Yb-Hqf" firstAttribute="top" secondItem="Bpj-Ue-mtE" secondAttribute="bottom" constant="-1" id="Nnx-pw-z9k"/>
                             <constraint firstItem="7jr-qW-2Pe" firstAttribute="leading" secondItem="qdJ-o0-2nf" secondAttribute="leading" constant="75" id="Og9-u1-aZN"/>
                             <constraint firstAttribute="trailing" secondItem="mW9-Yb-Hqf" secondAttribute="trailing" constant="11" id="RYm-oz-VSb"/>
@@ -85,6 +121,7 @@
                             <constraint firstItem="Bpj-Ue-mtE" firstAttribute="top" secondItem="qdJ-o0-2nf" secondAttribute="top" constant="10" id="ZdV-kz-jRf"/>
                             <constraint firstItem="7jr-qW-2Pe" firstAttribute="top" secondItem="Bpj-Ue-mtE" secondAttribute="bottom" constant="35" id="d3C-qZ-OHX"/>
                             <constraint firstAttribute="trailing" secondItem="Bpj-Ue-mtE" secondAttribute="trailing" constant="11" id="gdk-8t-3Kj"/>
+                            <constraint firstItem="dir-wC-rmt" firstAttribute="leading" secondItem="qdJ-o0-2nf" secondAttribute="leading" constant="8" id="kid-nw-6f1"/>
                             <constraint firstAttribute="bottom" secondItem="7jr-qW-2Pe" secondAttribute="bottom" constant="59" id="q17-QP-zM8"/>
                             <constraint firstItem="7jr-qW-2Pe" firstAttribute="top" secondItem="mW9-Yb-Hqf" secondAttribute="bottom" constant="8" id="ryn-qq-lbZ"/>
                             <constraint firstItem="mW9-Yb-Hqf" firstAttribute="top" secondItem="Bpj-Ue-mtE" secondAttribute="bottom" id="sWn-1Y-YaR"/>
@@ -102,6 +139,7 @@
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="NAx-pr-cYx"/>
                                 <exclude reference="YyY-dq-fid"/>
                                 <exclude reference="gdk-8t-3Kj"/>
                                 <exclude reference="vYP-Up-qPi"/>
@@ -127,6 +165,7 @@
                     <constraint firstItem="qdJ-o0-2nf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WUf-Pz-x7K"/>
                     <constraint firstAttribute="bottomMargin" secondItem="qdJ-o0-2nf" secondAttribute="bottom" constant="-112" id="hZ4-8R-9mq"/>
                     <constraint firstItem="qdJ-o0-2nf" firstAttribute="top" secondItem="bnG-ui-wwA" secondAttribute="bottom" constant="-25" id="i4r-9y-JHO"/>
+                    <constraint firstItem="qxW-UQ-4xv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ppz-oX-5eN"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -141,9 +180,11 @@
                 <outlet property="bookButton" destination="7jr-qW-2Pe" id="Duo-0U-0rr"/>
                 <outlet property="companyName" destination="Bpj-Ue-mtE" id="FpX-g8-7rr"/>
                 <outlet property="extendedBackground" destination="bnG-ui-wwA" id="IxW-ff-nU4"/>
+                <outlet property="oneLetter" destination="qxW-UQ-4xv" id="rwP-fr-yVV"/>
+                <outlet property="oneLetterBackground" destination="dir-wC-rmt" id="4zx-T2-gnQ"/>
                 <outlet property="priceAndTime" destination="mW9-Yb-Hqf" id="LFi-0W-UCY"/>
             </connections>
-            <point key="canvasLocation" x="305" y="448"/>
+            <point key="canvasLocation" x="305" y="447.5"/>
         </tableViewCell>
     </objects>
 </document>

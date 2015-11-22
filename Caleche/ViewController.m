@@ -63,14 +63,14 @@
     
     [self.view bringSubviewToFront:self.goButton];
     
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 130, 30)];
-    UILabel *titleLabel = [[UILabel alloc] init];
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    /*UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = @"Caleche";
     titleLabel.font = [UIFont fontWithName:@"PierSans-Bold" size:18];
     titleLabel.frame = CGRectMake(0, 0, 130, 30);
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = unselectedTextColor;
-    [titleView addSubview:titleLabel];
+    [titleView addSubview:titleLabel];*/
     UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"caleche logo"]];
     iv.frame = CGRectMake(0, 0, 30, 30);
     [titleView addSubview:iv];
@@ -84,8 +84,8 @@
     
     MKCoordinateRegion mapRegion;
     AppDelegate *appDelegate=(AppDelegate *)[UIApplication sharedApplication].delegate;
-    mapRegion.center.latitude = appDelegate.locationManager.location.coordinate.latitude;
-    mapRegion.center.longitude = appDelegate.locationManager.location.coordinate.longitude;
+    mapRegion.center.latitude = appDelegate.locationManager.location.coordinate.latitude - 0.002;
+    mapRegion.center.longitude = appDelegate.locationManager.location.coordinate.longitude + 0.001;
     //self.startCoordinate = self.mapView.centerCoordinate;
     NSLog(@"start:%f",self.startCoordinate.longitude);
     NSLog(@"center:%f",self.mapView.centerCoordinate.longitude);
@@ -101,6 +101,10 @@
     if (self.startCoordinate.longitude == 0 && self.startCoordinate.latitude == 0)
     {
         self.startCoordinate = loc.coordinate;
+        [self drawLine];
+        if(end == YES){
+            [self endButtonPressed:self];
+        }
     }
 }
 
@@ -181,8 +185,8 @@
         [self.view layoutIfNeeded];
     } completion:^ (BOOL finished)
      {
-         scrollyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 70) rate:50.0 andFadeLength:0];
-         scrollyLabel.marqueeType = MLContinuous;
+         //scrollyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 70) rate:50.0 andFadeLength:0];
+         //scrollyLabel.marqueeType = MLContinuous;
          NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport "];
          [text addAttribute: NSForegroundColorAttributeName value: [AppDelegate calechePink] range: NSMakeRange(0, 22)];
          [text addAttribute: NSForegroundColorAttributeName value: [UIColor colorWithRed:0.282f green:0.565f blue:0.886f alpha:1.00f] range: NSMakeRange(23, 45)];
@@ -192,9 +196,9 @@
          //[text addAttribute: NSForegroundColorAttributeName value: [UIColor grayColor] range: NSMakeRange(115, 137)];
          //[text addAttribute: NSForegroundColorAttributeName value: [UIColor blackColor] range: NSMakeRange(197, 220)];
          //[text addAttribute: NSForegroundColorAttributeName value: [UIColor blueColor] range: NSMakeRange(, 55)];
-         [scrollyLabel setAttributedText: text];
-         scrollyLabel.alpha = 0;
-         scrollyLabel.font = [UIFont fontWithName:@"Futura" size:30];
+         //[scrollyLabel setAttributedText: text];
+         //scrollyLabel.alpha = 0;
+         //scrollyLabel.font = [UIFont fontWithName:@"Futura" size:30];
          //scrollyLabel.textColor = [AppDelegate calecheDark];
          [self.view addSubview:scrollyLabel];
          halo = [PulsingHaloLayer layer];
@@ -212,11 +216,11 @@
          whiteView.alpha = 0;
          [self.view addSubview:whiteView];
          [UIView animateWithDuration:0.4 animations:^{
-             scrollyLabel.alpha = 1;
+             //scrollyLabel.alpha = 1;
              halo.position = self.mapView.center;
              [self.view.layer addSublayer:halo];
              [self.view bringSubviewToFront:calecheLogo];
-             [self.view bringSubviewToFront:scrollyLabel];
+             //[self.view bringSubviewToFront:scrollyLabel];
              halo.haloLayerNumber = 5;
              halo.radius = 240.0;
              UIColor *color = [AppDelegate calecheDark];
@@ -241,7 +245,7 @@
     [self.navigationController pushViewController:vc animated:YES];
     whiteView.frame = CGRectNull;
     calecheLogo.frame = CGRectNull;
-    scrollyLabel.frame = CGRectNull;
+    //scrollyLabel.frame = CGRectNull;
     halo.frame = CGRectNull;
     _goButtonBottom.constant = 30;
     _topLayout.constant = 0;

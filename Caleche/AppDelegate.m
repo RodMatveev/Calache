@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GSTouchesShowingWindow.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,14 @@
 
 + (UIColor*)calecheDark {
     return [UIColor colorWithRed:0.294f green:0.290f blue:0.290f alpha:1.00f];
+}
+
+- (GSTouchesShowingWindow *)window {
+    static GSTouchesShowingWindow *window = nil;
+    if (!window) {
+        window = [[GSTouchesShowingWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    }
+    return window;
 }
 
 
