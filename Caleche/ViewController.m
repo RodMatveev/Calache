@@ -119,6 +119,7 @@
     [manager POST:path parameters:postDict success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSLog(@"response:%@",responseObject);
+        [self showResultsViewControllerWithDictionary:responseObject];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
@@ -165,7 +166,6 @@
         [self.view layoutIfNeeded];
     } completion:^ (BOOL finished)
      {
-         NSTimer *aTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(showResultsViewController) userInfo:nil repeats:NO];
          scrollyLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 70) rate:50.0 andFadeLength:0];
          scrollyLabel.marqueeType = MLContinuous;
          NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport  Fuck public transport "];
@@ -186,7 +186,7 @@
          calecheLogo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width)];
          calecheLogo.center = self.mapView.center;
          calecheLogo.backgroundColor = [AppDelegate calecheDark];
-         calecheLogo.layer.cornerRadius = 5;
+         calecheLogo.layer.cornerRadius = 50;
          calecheLogo.layer.masksToBounds = YES;
          calecheLogo.image = [UIImage imageNamed:@"caleche logo"];
          calecheLogo.alpha = 0;
@@ -214,13 +214,14 @@
      }];
 }
 
-- (void)showResultsViewController
+- (void)showResultsViewControllerWithDictionary:(NSDictionary *)dic
 {
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
     ResultsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultsViewController"];
     vc.startCoordinate = self.startCoordinate;
     vc.endCoordinate = self.endCoordinate;
+    vc.resultsDictionary = dic;
     //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     [self.navigationController pushViewController:vc animated:YES];
     whiteView.frame = CGRectNull;

@@ -14,5 +14,7 @@
 @property(weak,nonatomic) IBOutlet UIView *extendedBackground;
 @property(weak,nonatomic) IBOutlet UIView *resultsView;
 @property(weak,nonatomic) IBOutlet UIButton *bookButton;
+@property(weak,nonatomic) IBOutlet UILabel *companyName;
+@property(weak,nonatomic) IBOutlet UILabel *priceAndTime;
 
 @end

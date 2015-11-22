@@ -14,6 +14,7 @@
     UIColor *unselectedTextColor;
 }
 
+@property (retain, nonatomic) NSDictionary *resultsDictionary;
 @property (weak,nonatomic) IBOutlet UITableView *resultsTable;
 @property CLLocationCoordinate2D startCoordinate;
 @property CLLocationCoordinate2D endCoordinate;
