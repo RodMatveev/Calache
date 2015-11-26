@@ -3,7 +3,7 @@
 //  Caleche
 //
 //  Created by Adrian Kozhevnikov on 21/11/2015.
-//  Copyright © 2015 Adrian Kozhevnikov. All rights reserved.
+//  Copyright © 2015 Caleche. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -25,6 +25,13 @@
                                                object:nil];
     
     end = YES;
+    UIView *footer = [[UIView alloc] initWithFrame:self.view.bounds];
+    UITapGestureRecognizer *tapG = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleMapTap:)];
+    tapG.cancelsTouchesInView = YES;
+    tapG.numberOfTapsRequired = 1;
+    tapG.delegate = self;
+    [footer addGestureRecognizer:tapG];
+    [self.tableView setTableFooterView:footer];
     [self registerForKeyboardNotifications];
     self.tableView.hidden = YES;
     self.tableView.delegate = self;
@@ -143,38 +150,27 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         NSLog(@"error:%@",error);
-
+        if ([error.description containsString:@"The Internet connection appears to be offline"]){
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Poor internet connection :(" message:@"Looks like Caleche doesn't have a good net connection right now" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            internetError = YES;
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot find taxis :(" message:@"Try changing the start or end location" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        [self resetScreen];
     }];
 }
 
-#pragma mark - CLLocationManagerDelegate
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"didFailWithError: %@", error);
-    UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Unable to find your location" preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [errorAlert addAction:defaultAction];
-    [self presentViewController:errorAlert animated:YES completion:nil];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
-    
-    if (currentLocation != nil) {
-        NSLog(@"%@", [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude]);
-        NSLog(@"%@", [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude]);
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark UIButton methods
 
 - (IBAction)goButtonPressed:(id)sender {
     [self apiCall];
@@ -221,7 +217,7 @@
              [self.view.layer addSublayer:halo];
              [self.view bringSubviewToFront:calecheLogo];
              //[self.view bringSubviewToFront:scrollyLabel];
-             halo.haloLayerNumber = 5;
+             halo.haloLayerNumber = 4;
              halo.radius = 240.0;
              UIColor *color = [AppDelegate calecheDark];
              halo.backgroundColor = color.CGColor;
@@ -229,33 +225,13 @@
              calecheLogo.frame = CGRectMake(0, 0, 100, 100);
              calecheLogo.center = self.mapView.center;
              whiteView.alpha = 0.7;
+             if (internetError == YES){
+                 [self resetScreen];
+             }
+             internetError = NO;
          }];
      }];
 }
-
-- (void)showResultsViewControllerWithDictionary:(NSDictionary *)dic
-{
-    NSString * storyboardName = @"Main";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    ResultsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultsViewController"];
-    vc.startCoordinate = self.startCoordinate;
-    vc.endCoordinate = self.endCoordinate;
-    vc.resultsDictionary = dic;
-    //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self.navigationController pushViewController:vc animated:YES];
-    whiteView.frame = CGRectNull;
-    calecheLogo.frame = CGRectNull;
-    //scrollyLabel.frame = CGRectNull;
-    halo.frame = CGRectNull;
-    _goButtonBottom.constant = 30;
-    _topLayout.constant = 0;
-    [self.view setNeedsUpdateConstraints];
-    [self.view layoutIfNeeded];
-    [self endButtonPressed:self];
-    //[self.navigationController presentViewController:nav animated:YES completion:nil];
-}
-
-
 
 - (IBAction)startButtonPressed:(id)sender {
     [self.textField endEditing:YES];
@@ -290,21 +266,37 @@
     [self dropPinAtCoordinate:self.startCoordinate];
 }
 
-- (void)dropPinAtCoordinate:(CLLocationCoordinate2D) coord
+#pragma mark Present View Controller
+
+- (void)showResultsViewControllerWithDictionary:(NSDictionary *)dic
 {
-    [self.mapView removeOverlays:self.mapView.overlays];
-    NSInteger toRemoveCount = self.mapView.annotations.count;
-    NSMutableArray *toRemove = [NSMutableArray arrayWithCapacity:toRemoveCount];
-    for (id annotation in self.mapView.annotations)
-        if (annotation != self.mapView.userLocation)
-            [toRemove addObject:annotation];
-    [self.mapView removeAnnotations:toRemove];
-    
-    annot = [[AKPointAnnotation alloc] init];
-    annot.coordinate = coord;
-    annot.imageName = @"pin";
-    [self.mapView addAnnotation:annot];
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    ResultsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"ResultsViewController"];
+    vc.startCoordinate = self.startCoordinate;
+    vc.endCoordinate = self.endCoordinate;
+    vc.resultsDictionary = [dic mutableCopy];
+    //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self.navigationController pushViewController:vc animated:YES];
+    [self resetScreen];
+    //[self.navigationController presentViewController:nav animated:YES completion:nil];
 }
+
+- (void)resetScreen
+{
+    NSLog(@"reset");
+    whiteView.frame = CGRectNull;
+    calecheLogo.frame = CGRectNull;
+    //scrollyLabel.frame = CGRectNull;
+    halo.frame = CGRectNull;
+    _goButtonBottom.constant = 30;
+    _topLayout.constant = 0;
+    [self.view setNeedsUpdateConstraints];
+    [self.view layoutIfNeeded];
+    [self endButtonPressed:self];
+}
+
+#pragma mark MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -379,6 +371,8 @@
     return lineView;
 }
 
+#pragma mark MKMapView methods
+
 - (void)drawLine {
     
     NSLog(@"start:%f, end:%f",self.startCoordinate.longitude, self.endCoordinate.longitude);
@@ -397,6 +391,62 @@
     
 }
 
+- (void)dropPinAtCoordinate:(CLLocationCoordinate2D) coord
+{
+    [self.mapView removeOverlays:self.mapView.overlays];
+    NSInteger toRemoveCount = self.mapView.annotations.count;
+    NSMutableArray *toRemove = [NSMutableArray arrayWithCapacity:toRemoveCount];
+    for (id annotation in self.mapView.annotations)
+        if (annotation != self.mapView.userLocation)
+            [toRemove addObject:annotation];
+    [self.mapView removeAnnotations:toRemove];
+    
+    annot = [[AKPointAnnotation alloc] init];
+    annot.coordinate = coord;
+    annot.imageName = @"pin";
+    [self.mapView addAnnotation:annot];
+}
+
+- (void)handleMapTap:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"handle map tap");
+    [self.textField endEditing:YES];
+    tap = nil;
+}
+
+- (void)findAddress: (NSString *)address
+{
+    NSLog(@"findAddress called");
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    NSLog(@"address:%@",address);
+    [geocoder geocodeAddressString:address
+                 completionHandler:^(NSArray* placemarks, NSError* error){
+                     if (placemarks && placemarks.count > 0) {
+                         NSLog(@"%@",placemarks);
+                         CLPlacemark *topResult = [placemarks objectAtIndex:0];
+                         MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                         [self goToCoordinate:placemark.coordinate];
+                     }
+                 }
+     ];
+}
+
+- (void)goToCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    MKCoordinateRegion region = self.mapView.region;
+    region.center = coordinate;
+    if (end == YES){
+        self.endCoordinate = region.center;
+    } else {
+        self.startCoordinate = region.center;
+    }
+    
+    [self.mapView setRegion:region animated:YES];
+    
+}
+
+#pragma mark UITextFieldDelegate
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [UIView animateWithDuration:0.1 animations:^{
@@ -404,11 +454,36 @@
     }];
 }
 
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [UIView animateWithDuration:0.1 animations:^{
+        stopEditing.alpha = 0;
+    }];
+    self.tableView.hidden = YES;
+}
+
+
+-(BOOL)textFieldShouldClear:(UITextField *)textField
+{
+    self.tableView.hidden = YES;
+    return YES;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSString *string = textField.text;
+    [self.textField endEditing:YES];
+    [self findAddress:string];
+    return YES;
+}
+
+#pragma mark UITextField methods
+
 -(void)textFieldDidChange:(UITextField *)textField
 {
     MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
     [searchRequest setNaturalLanguageQuery:textField.text];
-    searchRequest.region = MKCoordinateRegionMakeWithDistance(self.mapView.centerCoordinate, 10000, 10000);
+    searchRequest.region = MKCoordinateRegionMakeWithDistance(self.startCoordinate, .1, .1);
     
     // Create the local search to perform the search
     MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
@@ -428,14 +503,6 @@
             NSLog(@"Search Request Error: %@", [error localizedDescription]);
         }
     }];
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [UIView animateWithDuration:0.1 animations:^{
-        stopEditing.alpha = 0;
-    }];
-    self.tableView.hidden = YES;
 }
 
 - (void)updateTextField
@@ -461,58 +528,6 @@
     }];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    if (textSuggestions.count > 0)
-        return 1;
-    else
-        return 0;//count of section
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return textSuggestions.count;    //count number of row from counting array hear cataGorry is An Array
-}
-
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *MyIdentifier = @"MyIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:MyIdentifier];
-    }
-    
-    // Here we use the provided setImageWithURL: method to load the web image
-    // Ensure you use a placeholder image otherwise cells will be initialized with no image
-    MKMapItem *mapItem = textSuggestions[indexPath.row];
-    NSLog(@"%@",mapItem);
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", mapItem.placemark];
-    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20.0f];
-    cell.textLabel.textColor = [AppDelegate calecheDark];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    return 80;
-    
-}
-
--(BOOL)textFieldShouldClear:(UITextField *)textField
-{
-    self.tableView.hidden = YES;
-    return YES;
-}
-
 - (void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -523,12 +538,6 @@
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
     
-}
-
-- (void)handleMapTap:(UITapGestureRecognizer *)sender
-{
-    [self.textField endEditing:YES];
-    tap = nil;
 }
 
 - (void)keyboardWillShow:(NSNotification*)aNotification
@@ -569,49 +578,71 @@
     self.tableView.hidden = YES;
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
+#pragma mark UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSString *string = textField.text;
-    [self.textField endEditing:YES];
-    [self findAddress:string];
-    return YES;
+    if (textSuggestions.count > 0)
+        return 1;
+    else
+        return 0;//count of section
 }
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return textSuggestions.count;    //count number of row from counting array hear cataGorry is An Array
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:MyIdentifier];
+    }
+    
+    // Here we use the provided setImageWithURL: method to load the web image
+    // Ensure you use a placeholder image otherwise cells will be initialized with no image
+    MKMapItem *mapItem = textSuggestions[indexPath.row];
+    NSLog(@"%@",mapItem);
+    NSString *str = [[NSString alloc] init];
+    str = [NSString stringWithFormat:@"%@", mapItem.placemark.name];
+    if (mapItem.placemark.postalCode)
+    {
+        str = [NSString stringWithFormat:@"%@, %@", str, mapItem.placemark.postalCode];
+    }
+    if (mapItem.placemark.locality)
+    {
+        str = [NSString stringWithFormat:@"%@, %@", str, mapItem.placemark.locality];
+    }
+    str = [NSString stringWithFormat:@"%@, %@", str, mapItem.placemark.country];
+    cell.textLabel.text = str;
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:20.0f];
+    cell.textLabel.textColor = [AppDelegate calecheDark];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 80;
+    
+}
+
+#pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.textField endEditing:YES];
     MKMapItem *mapItem = textSuggestions[indexPath.row];
     [self goToCoordinate:mapItem.placemark.coordinate];
-}
-
-- (void)findAddress: (NSString *)address
-{
-    NSLog(@"findAddress called");
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    NSLog(@"address:%@",address);
-    [geocoder geocodeAddressString:address
-                 completionHandler:^(NSArray* placemarks, NSError* error){
-                     if (placemarks && placemarks.count > 0) {
-                         NSLog(@"%@",placemarks);
-                         CLPlacemark *topResult = [placemarks objectAtIndex:0];
-                         MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
-                         [self goToCoordinate:placemark.coordinate];
-                        }
-                 }
-     ];
-}
-
-- (void)goToCoordinate:(CLLocationCoordinate2D)coordinate
-{
-    MKCoordinateRegion region = self.mapView.region;
-    region.center = coordinate;
-    if (end == YES){
-        self.endCoordinate = region.center;
-    } else {
-        self.startCoordinate = region.center;
-    }
-    
-    [self.mapView setRegion:region animated:YES];
-
 }
 
 

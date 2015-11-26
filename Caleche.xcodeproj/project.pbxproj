@@ -13,7 +13,6 @@
 		3F03ECD61C00C5650078FA6B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */; };
 		3F03ECDB1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
 		3F03ECDC1C00C70D0078FA6B /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */; };
-		3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */; };
 		3F1DD0451C011F720092F549 /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DD0441C011F720092F549 /* PulsingHaloLayer.m */; };
 		3F1DD0481C0120BF0092F549 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DD0471C0120BF0092F549 /* MarqueeLabel.m */; };
 		3F1DD04B1C0120CF0092F549 /* AKPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1DD04A1C0120CF0092F549 /* AKPointAnnotation.m */; };
@@ -84,7 +83,6 @@
 		3F03ECD11C00C4180078FA6B /* arrow_pink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_pink@2x.png"; sourceTree = "<group>"; };
 		3F03ECD41C00C5650078FA6B /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
 		3F03ECDA1C00C70D0078FA6B /* arrow_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left@2x.png"; sourceTree = "<group>"; };
-		3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardTemp.storyboard; sourceTree = "<group>"; };
 		3F1DD0431C011F720092F549 /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
 		3F1DD0441C011F720092F549 /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
 		3F1DD0461C0120BF0092F549 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 				3FA89B101C00683B009750DF /* ViewController.h */,
 				3FA89B111C00683B009750DF /* ViewController.m */,
 				3FA89B131C00683B009750DF /* Main.storyboard */,
-				3F1DD0411C011E090092F549 /* StoryboardTemp.storyboard */,
 				3F8C26141C00D943004E58AF /* EverythingTableViewCell.h */,
 				3F8C26151C00D943004E58AF /* EverythingTableViewCell.m */,
 				3F8C26161C00D943004E58AF /* EverythingTableViewCell.xib */,
@@ -481,7 +478,6 @@
 				DAC1301F1C02046E00C088CC /* GSTouchImage.png in Resources */,
 				3F1DD05E1C0121C40092F549 /* search.png in Resources */,
 				3F1DD0501C0121AE0092F549 /* caleche logo.png in Resources */,
-				3F1DD0421C011E090092F549 /* StoryboardTemp.storyboard in Resources */,
 				3FA89B171C00683B009750DF /* Assets.xcassets in Resources */,
 				3F1DD05B1C0121C40092F549 /* pier-italic.otf in Resources */,
 				3F03ECD21C00C4180078FA6B /* arrow_pink@2x.png in Resources */,

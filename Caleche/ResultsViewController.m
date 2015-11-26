@@ -3,7 +3,7 @@
 //  Caleche
 //
 //  Created by Rod Matveev on 21/11/2015.
-//  Copyright © 2015 Rod Matveev. All rights reserved.
+//  Copyright © 2015 Caleche. All rights reserved.
 //
 
 #import "ResultsViewController.h"
@@ -23,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self checkPrices];
+    [self createDatePicker];
+    
     unselectedTextColor = [UIColor colorWithRed:0.573f green:0.580f blue:0.592f alpha:1.00f];
     
     [self setAddress];
@@ -40,7 +43,7 @@
     [titleView addSubview:iv];
     self.navigationItem.titleView = titleView;
     
-    self.navigationController.navigationBar.tintColor = unselectedTextColor;
+    self.navigationController.navigationBar.tintColor = [AppDelegate calechePink];
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *backBtnImage = [UIImage imageNamed:@"backArrow"];
     backBtnImage = [backBtnImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -48,14 +51,92 @@
     [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(goback) forControlEvents:UIControlEventTouchUpInside];
     backBtn.frame = CGRectMake(0, 0, 30, 30);
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn] ;
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     self.navigationItem.leftBarButtonItem = backButton;
+    timeButton = [[UIBarButtonItem alloc] initWithTitle:@"Now"
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(openPicker:)];
+    self.navigationItem.rightBarButtonItem = timeButton;
     // Do any additional setup after loading the view.
     self.resultsTable.delegate = self;
     self.resultsTable.dataSource = self;
     selectedService = 100;
     sortByPrice = YES;
     NSLog(@"FINAL RESULTS:%@",self.resultsDictionary[@"cheapest"]);
+}
+
+- (void)checkPrices
+{
+    if ([self.resultsDictionary[@"cheapest"][@"price"] integerValue] == 0){
+        self.resultsDictionary[@"cheapest"] = self.resultsDictionary[@"others_price"][0];
+    }
+    if ([self.resultsDictionary[@"closest"][@"price"] integerValue] == 0){
+        self.resultsDictionary[@"closest"] = self.resultsDictionary[@"others_time"][0];
+    }
+}
+
+- (void)createDatePicker
+{
+    datePickerOpen = NO;
+    datePickerView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/*self.view.frame.size.height *2/3-50*/, self.view.frame.size.width, self.view.frame.size.height *1/3 + 50)];
+    datePickerView.backgroundColor = [UIColor whiteColor];
+    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, self.view.frame.size.height *1/3)];
+    datePicker.backgroundColor = [UIColor clearColor];
+    UIButton *cancel = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancel addTarget:self
+            action:@selector(openPicker:)
+  forControlEvents:UIControlEventTouchUpInside];
+    [cancel setTitle:@"Cancel" forState:UIControlStateNormal];
+    [cancel setTitleColor:[AppDelegate calechePink] forState:UIControlStateNormal];
+    cancel.tintColor = [AppDelegate calechePink];
+    cancel.frame = CGRectMake(0, 0, self.view.bounds.size.width/2, 50);
+    [datePickerView addSubview:cancel];
+    UIButton *set = [UIButton buttonWithType:UIButtonTypeCustom];
+    [set addTarget:self
+               action:@selector(setTime:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [set setTitle:@"Set" forState:UIControlStateNormal];
+    [set setTitleColor:[AppDelegate calechePink] forState:UIControlStateNormal];
+    set.tintColor = [AppDelegate calechePink];
+    set.frame = CGRectMake(self.view.bounds.size.width/2, 0, self.view.bounds.size.width/2, 50);
+    [datePickerView addSubview:set];
+    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
+    [datePickerView addSubview:datePicker];
+    UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 3)];
+    topBar.backgroundColor = [UIColor colorWithRed:0.757f green:0.757f blue:0.757f alpha:1.00f];
+    [datePickerView addSubview:topBar];
+    UIView *bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, 47, self.view.bounds.size.width, 3)];
+    bottomBar.backgroundColor = [UIColor colorWithRed:0.757f green:0.757f blue:0.757f alpha:1.00f];
+    [datePickerView addSubview:bottomBar];
+    [self.view addSubview:datePickerView];
+}
+
+- (void)setTime:(id)sender
+{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"HH:mm, EE"];
+    timeButton.title = [NSString stringWithFormat:@"%@", [dateFormat stringFromDate:datePicker.date]];
+    [self openPicker:self];
+    
+}
+
+- (void)openPicker:(id)sender
+{
+    if (datePickerOpen == NO){
+        datePickerOpen = YES;
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             datePickerView.frame = CGRectMake(0, self.view.frame.size.height *2/3 - 20, self.view.frame.size.width, self.view.frame.size.height *1/3 + 30);
+                         }];
+    } else {
+        datePickerOpen = NO;
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             datePickerView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height *1/3 + 30);
+                         }];
+    }
+
 }
 
 - (void)setAddress
@@ -144,12 +225,21 @@
             backgroundRight.layer.borderColor = [UIColor whiteColor].CGColor;
             backgroundRight.layer.borderWidth = 1.5;
             
+            if([self.resultsDictionary[@"cheapest"][@"type"] containsString:@"uber"]){
+                taxiName1.text = [NSString stringWithFormat:@"%@ (%@)",self.resultsDictionary[@"cheapest"][@"type"],self.resultsDictionary[@"cheapest"][@"display_name"]];
+            } else {
+                taxiName1.text = self.resultsDictionary[@"cheapest"][@"type"];
+            }
+            if([self.resultsDictionary[@"closest"][@"type"] containsString:@"uber"]){
+                taxiName2.text = [NSString stringWithFormat:@"%@ (%@)",self.resultsDictionary[@"closest"][@"type"],self.resultsDictionary[@"closest"][@"display_name"]];
+            } else {
+                taxiName2.text = self.resultsDictionary[@"closest"][@"type"];
+            }
+            taxiName1.text = [taxiName1.text stringByReplacingCharactersInRange:NSMakeRange(0,1)
+                                                                      withString:[[taxiName1.text substringToIndex:1] capitalizedString]];
             
-            taxiName1.text = [self.resultsDictionary[@"cheapest"][@"type"] stringByReplacingCharactersInRange:NSMakeRange(0,1)
-                                                                      withString:[[self.resultsDictionary[@"cheapest"][@"type"] substringToIndex:1] capitalizedString]];
-            
-            taxiName2.text = [self.resultsDictionary[@"closest"][@"type"] stringByReplacingCharactersInRange:NSMakeRange(0,1)
-                                                                                                   withString:[[self.resultsDictionary[@"closest"][@"type"] substringToIndex:1] capitalizedString]];
+            taxiName2.text = [taxiName2.text stringByReplacingCharactersInRange:NSMakeRange(0,1)
+                                                                                                   withString:[[taxiName2.text substringToIndex:1] capitalizedString]];
 
             price1.text = [NSString stringWithFormat:@"£%.02f",[self.resultsDictionary[@"cheapest"][@"price"] floatValue]];
             price2.text = [NSString stringWithFormat:@"£%.02f",[self.resultsDictionary[@"closest"][@"price"] floatValue]];
@@ -298,6 +388,7 @@
 }
 
 -(IBAction)deeplinkLeft:(id)sender{
+    NSString *str = [self.endAddress.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     if([self.resultsDictionary[@"cheapest"][@"type"] isEqualToString:@"uber"]){
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"uber://"]]){
             UIApplication *ourApplication = [UIApplication sharedApplication];
@@ -312,7 +403,7 @@
     }else if([self.resultsDictionary[@"cheapest"][@"type"] isEqualToString:@"hailo"]){
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"hailoapp://"]]){
             UIApplication *ourApplication = [UIApplication sharedApplication];
-            NSString *urlStr = [NSString stringWithFormat:@"hailoapp://confirm?pickupCoordinate=%f,%f&destinationCoordinate=%f,%f",self.startCoordinate.latitude,self.startCoordinate.longitude,self.endCoordinate.latitude,self.endCoordinate.longitude];
+            NSString *urlStr = [NSString stringWithFormat:@"hailoapp://confirm?pickupCoordinate=%f,%f&destinationCoordinate=%f,%f&destinationAddress=%@&referrer=iJgAldWT75/xfN7UrhupbKU+DN7foAU3I6uyMiGxJ1PLcWCpWbHyjP7E2ybH+BMmYo4Gh9i7ABbi7ZnYL8Dxf4NUiRaHwl0YKwp97+bR1ZFmmH1Rovc5vJzSD4ASfonh2KMFsv6ERZUwHcOBbUCQDjPjvoOiNyg/k9v+Ab8N2q4LUEY9fQwu3N1djz/LFGxamw+zoK6xMlYHyOVkKob93A",self.startCoordinate.latitude,self.startCoordinate.longitude,self.endCoordinate.latitude,self.endCoordinate.longitude, str];
             NSURL *ourURL = [NSURL URLWithString:urlStr];
             [ourApplication openURL:ourURL];
         }else{
@@ -325,6 +416,7 @@
 }
 
 -(IBAction)deeplinkRight:(id)sender{
+    NSString *str = [self.endAddress.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     if([self.resultsDictionary[@"closest"][@"type"] isEqualToString:@"uber"]){
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"uber://"]]){
             UIApplication *ourApplication = [UIApplication sharedApplication];
@@ -339,7 +431,7 @@
     }else if([self.resultsDictionary[@"closest"][@"type"] isEqualToString:@"hailo"]){
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"hailoapp://"]]){
             UIApplication *ourApplication = [UIApplication sharedApplication];
-            NSString *urlStr = [NSString stringWithFormat:@"hailoapp://confirm?pickupCoordinate=%f,%f&destinationCoordinate=%f,%f",self.startCoordinate.latitude,self.startCoordinate.longitude,self.endCoordinate.latitude,self.endCoordinate.longitude];
+            NSString *urlStr = [NSString stringWithFormat:@"hailoapp://confirm?pickupCoordinate=%f,%f&destinationCoordinate=%f,%f&destinationAddress=%@&referrer=iJgAldWT75/xfN7UrhupbKU+DN7foAU3I6uyMiGxJ1PLcWCpWbHyjP7E2ybH+BMmYo4Gh9i7ABbi7ZnYL8Dxf4NUiRaHwl0YKwp97+bR1ZFmmH1Rovc5vJzSD4ASfonh2KMFsv6ERZUwHcOBbUCQDjPjvoOiNyg/k9v+Ab8N2q4LUEY9fQwu3N1djz/LFGxamw+zoK6xMlYHyOVkKob93A",self.startCoordinate.latitude,self.startCoordinate.longitude,self.endCoordinate.latitude,self.endCoordinate.longitude, str];
             NSURL *ourURL = [NSURL URLWithString:urlStr];
             [ourApplication openURL:ourURL];
         }else{
@@ -352,6 +444,7 @@
 }
 
 -(void)tableViewButtonPressed:(UIButton*)sender{
+    NSString *str = [self.endAddress.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     UITableViewCell *cell = (UITableViewCell *)[[[sender superview] superview]superview];
     NSIndexPath *path = [self.resultsTable indexPathForCell:cell];
     NSString *priceOrTime;
@@ -375,7 +468,7 @@
     }else if([self.resultsDictionary[priceOrTime][path.row - 2][@"type"] containsString:@"hailo"] || [self.resultsDictionary[priceOrTime][path.row - 2][@"type"] isEqualToString:@"Hailo"]){
         if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"hailoapp://"]]){
             UIApplication *ourApplication = [UIApplication sharedApplication];
-            NSString *urlStr = [NSString stringWithFormat:@"hailoapp://confirm?pickupCoordinate=%f,%f&destinationCoordinate=%f,%f",self.startCoordinate.latitude,self.startCoordinate.longitude,self.endCoordinate.latitude,self.endCoordinate.longitude];
+            NSString *urlStr = [NSString stringWithFormat:@"hailoapp://confirm?pickupCoordinate=%f,%f&destinationCoordinate=%f,%f&destinationAddress=%@&referrer=iJgAldWT75/xfN7UrhupbKU+DN7foAU3I6uyMiGxJ1PLcWCpWbHyjP7E2ybH+BMmYo4Gh9i7ABbi7ZnYL8Dxf4NUiRaHwl0YKwp97+bR1ZFmmH1Rovc5vJzSD4ASfonh2KMFsv6ERZUwHcOBbUCQDjPjvoOiNyg/k9v+Ab8N2q4LUEY9fQwu3N1djz/LFGxamw+zoK6xMlYHyOVkKob93A",self.startCoordinate.latitude,self.startCoordinate.longitude,self.endCoordinate.latitude,self.endCoordinate.longitude, str];
             NSURL *ourURL = [NSURL URLWithString:urlStr];
             [ourApplication openURL:ourURL];
         }else{
