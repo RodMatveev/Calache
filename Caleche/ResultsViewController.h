@@ -24,5 +24,9 @@
 @property CLLocationCoordinate2D endCoordinate;
 @property (weak, nonatomic) IBOutlet UILabel *startAddress;
 @property (weak, nonatomic) IBOutlet UILabel *endAddress;
+@property (weak, nonatomic) IBOutlet UIButton *startAddressButton;
+- (IBAction)startAddressButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *endAddressButton;
+- (IBAction)endAddressButtonPressed:(id)sender;
 
 @end

@@ -139,10 +139,10 @@
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="NAx-pr-cYx"/>
                                 <exclude reference="YyY-dq-fid"/>
                                 <exclude reference="gdk-8t-3Kj"/>
                                 <exclude reference="vYP-Up-qPi"/>
+                                <exclude reference="NAx-pr-cYx"/>
                                 <exclude reference="SNs-t2-Pwe"/>
                                 <exclude reference="XM6-Of-WfC"/>
                                 <exclude reference="sWn-1Y-YaR"/>
